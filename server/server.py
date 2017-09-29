@@ -16,6 +16,7 @@ def minutely():
     temperature = request.args["temperature"]
     humidity = request.args["humidity"]
     save_ctth("minutely", time, temperature, humidity)
+    return "Success"
 
 
 @app.route("/dtth", methods=['POST'])
@@ -24,6 +25,7 @@ def daily():
     temperature = request.args["temperature"]
     humidity = request.args["humidity"]
     save_ctth("daily", time, temperature, humidity)
+    return "Success"
 
 
 @app.route("/wtth", methods=['POST'])
@@ -32,6 +34,7 @@ def weekly():
     temperature = request.args["temperature"]
     humidity = request.args["humidity"]
     save_ctth("weekly", time, temperature, humidity)
+    return "Success"
 
 
 @app.route("/mtth", methods=['POST'])
@@ -40,6 +43,7 @@ def monthly():
     temperature = request.args["temperature"]
     humidity = request.args["humidity"]
     save_ctth("monthly", time, temperature, humidity)
+    return "Success"
 
 
 app.run(host="0.0.0.0", port=6723)

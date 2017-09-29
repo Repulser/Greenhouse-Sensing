@@ -1,7 +1,8 @@
-import requests
-from datetime import datetime
-import Adafruit_DHT
 import sys
+from datetime import datetime
+
+import Adafruit_DHT
+import requests
 
 ip = "ip"
 sensor = Adafruit_DHT.DHT22
