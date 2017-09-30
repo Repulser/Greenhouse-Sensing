@@ -6,5 +6,5 @@
 0 12 * * * /usr/bin/python3.5 /root/request.py wtth
 0 16 * * * /usr/bin/python3.5 /root/request.py wtth
 0 20 * * * /usr/bin/python3.5 /root/request.py wtth
-0 24 * * * /usr/bin/python3.5 /root/request.py wtth
+0 0 * * * /usr/bin/python3.5 /root/request.py wtth
 0 12 * * * /usr/bin/python3.5 /root/request.py mtth
