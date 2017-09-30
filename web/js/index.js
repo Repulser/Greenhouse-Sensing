@@ -90,4 +90,4 @@ getEndpoint(currentEndpoint);
 setInterval(function () {
     getEndpoint(currentEndpoint);
     updateLast();
-}, 1000);
+}, 30*1000);
