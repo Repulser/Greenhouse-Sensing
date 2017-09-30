@@ -26,6 +26,13 @@ def generate_json(cursor):
     return jsonify(object)
 
 
+# Allow origin all
+@app.after_request
+def apply_caching(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    return response
+
+
 # Get routes
 @app.route("/current", methods=["GET"])
 def current():
