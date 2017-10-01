@@ -1,6 +1,7 @@
 var dataTemp = [];
 var dataHum = [];
-var currentEndpoint = 1;
+var currentEndpoint = 2;
+var endpointIP = "localhost";
 
 var chartTemp = new CanvasJS.Chart("tempGraph", {
     theme: "light2",
@@ -58,11 +59,11 @@ function addData(data) {
 }
 
 var endpoints = [
-    "http://localhost:6723/current",
-    "http://localhost:6723/hourly",
-    "http://localhost:6723/daily",
-    "http://localhost:6723/weekly",
-    "http://localhost:6723/monthly"
+    "http://"+endpointIP+":6723/current",
+    "http://"+endpointIP+":6723/hourly",
+    "http://"+endpointIP+":6723/daily",
+    "http://"+endpointIP+":6723/weekly",
+    "http://"+endpointIP+":6723/monthly"
 ];
 
 function getEndpoint(index) {
@@ -86,8 +87,9 @@ function updateLast() {
     });
 }
 
-getEndpoint(currentEndpoint);
+changeEndpoint(currentEndpoint); // Set button to default pref, and load data
+updateLast(); // Load the most recent data
 setInterval(function () {
-    getEndpoint(currentEndpoint);
-    updateLast();
+    getEndpoint(currentEndpoint); // Update the graph based on last chosen pref
+    updateLast(); // Update the most recent data
 }, 30*1000);
