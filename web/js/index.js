@@ -58,11 +58,11 @@ function addData(data) {
 }
 
 var endpoints = [
-    "http://localhost/current",
-    "http://localhost/hourly",
-    "http://localhost/daily",
-    "http://localhost/weekly",
-    "http://localhost/monthly"
+    "http://localhost:6723/current",
+    "http://localhost:6723/hourly",
+    "http://localhost:6723/daily",
+    "http://localhost:6723/weekly",
+    "http://localhost:6723/monthly"
 ];
 
 function getEndpoint(index) {
