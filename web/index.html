@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>The Greenhouse™</title>
+
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' />
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css' />
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet prefetch'
+          href='https://fonts.googleapis.com/css?family=Lato' />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Last Update <i class="fa fa-clock-o" aria-hidden="true"></i></h4>
+                    <p class="card-text" id="last-time"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Temperature <i class="fa fa-thermometer-half" aria-hidden="true"></i></h4>
+                    <p class="card-text" id="last-temp"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Humidity <i class="fa fa-tint" aria-hidden="true"></i></h4>
+                    <p class="card-text" id="last-hum"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Temperature History <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+                    </h4>
+                    <div id="tempGraph" style="height: 370px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Humidity History <i class="fa fa-tint" aria-hidden="true"></i></h4>
+                    <div id="humGraph" style="height: 370px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center" id="endpoints">
+                    <h4 class="card-title">History Period <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </h4>
+                    <a href="javascript:changeEndpoint(1);" id="endpoint-1" class="btn btn-primary">Hourly</a>
+                    <a href="javascript:changeEndpoint(2);" id="endpoint-2" class="btn btn-info">Daily</a>
+                    <a href="javascript:changeEndpoint(3);" id="endpoint-3" class="btn btn-info">Weekly</a>
+                    <a href="javascript:changeEndpoint(4);" id="endpoint-4" class="btn btn-info">Monthly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
