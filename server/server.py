@@ -1,9 +1,12 @@
 import pymongo
 from flask import Flask, request, jsonify
+# Web server
+from gevent.wsgi import WSGIServer
 
 app = Flask(__name__)
 client = pymongo.MongoClient('localhost', 27017)
 db = client.greenhouse
+port = 6723
 
 
 def save_ctth(collection, time, temperature, humidity):
@@ -100,5 +103,6 @@ def monthly():
     save_ctth("monthly", time, temperature, humidity)
     return "Success"
 
-
-app.run(host="0.0.0.0", port=6723)
+print("Serving http on %s" % port)
+http_server = WSGIServer(('', port), app)
+http_server.serve_forever()
