@@ -44,11 +44,11 @@ function addData(data) {
     for (var i = 0; i < data.length; i++) {
         dataTemp.push({
             x: new Date(data[i].time.replace(' ', 'T')),
-            y: parseFloat(data[i].temperature)
+            y: Math.round(data[i].temperature * 10) / 10
         });
         dataHum.push({
             x: new Date(data[i].time.replace(' ', 'T')),
-            y: parseFloat(data[i].humidity)
+            y: Math.round(data[i].humidity * 10) / 10
         });
     }
     chartTemp.options.data[0].dataPoints = dataTemp;
