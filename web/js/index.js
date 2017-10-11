@@ -1,7 +1,7 @@
 var dataTemp = [];
 var dataHum = [];
 var currentEndpoint = 2;
-var endpointIP = "localhost";
+var endpointIP = "45.77.142.144";
 
 var chartTemp = new CanvasJS.Chart("tempGraph", {
     theme: "light2",
@@ -43,11 +43,11 @@ function addData(data) {
     dataHum = [];
     for (var i = 0; i < data.length; i++) {
         dataTemp.push({
-            x: new Date(data[i].time.replace(' ', 'T')),
+            x: moment(data[i].time).toDate(),
             y: Math.round(data[i].temperature * 10) / 10
         });
         dataHum.push({
-            x: new Date(data[i].time.replace(' ', 'T')),
+            x: moment(data[i].time).toDate(),
             y: Math.round(data[i].humidity * 10) / 10
         });
     }
@@ -79,9 +79,9 @@ function changeEndpoint(index) {
 
 function updateLast() {
     $.getJSON(endpoints[0], function (data) {
-        date = new Date(data.time.replace(' ', 'T'))
+        date = moment(data.time);
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        $("#last-time").html(date.getHours() + ":" + date.getMinutes() + " " + months[date.getMonth()] + ". " + date.getDate());
+        $("#last-time").html(date.hours() + ":" + date.minutes() + " " + months[date.month()] + ". " + date.date());
         $("#last-temp").html((Math.round(data.temperature * 10) / 10) + "<sup>°C</sup>");
         $("#last-hum").html((Math.round(data.humidity * 10) / 10) + "<sup>%</sup>");
     });
