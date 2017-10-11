@@ -1,7 +1,7 @@
 var dataTemp = [];
 var dataHum = [];
 var currentEndpoint = 2;
-var endpointIP = "45.77.142.144";
+var endpointIP = "localhost";
 
 var chartTemp = new CanvasJS.Chart("tempGraph", {
     theme: "light2",
