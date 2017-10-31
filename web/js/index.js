@@ -81,7 +81,7 @@ function updateLast() {
     $.getJSON(endpoints[0], function (data) {
         date = moment(data.time);
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        $("#last-time").html(date.hours() + ":" + date.minutes() + " " + months[date.month()] + ". " + date.date());
+        $("#last-time").html(date.hours() + ":" + ('0' + date.minutes()).slice(-2) + " " + months[date.month()] + ". " + date.date());
         $("#last-temp").html((Math.round(data.temperature * 10) / 10) + "<sup>°C</sup>");
         $("#last-hum").html((Math.round(data.humidity * 10) / 10) + "<sup>%</sup>");
     });
